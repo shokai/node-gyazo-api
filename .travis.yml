@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+- '0.10'
+env:
+  secure: uPvqimQvvTqZCpN5xJL5Dc2suoF1BL9z7K4/EexQACW/8Vg4Vv4m9zYvZoBySlEj++vEzE9upLM4lVHjocdSsTro8jbUELlnEvouFQ5z78VU7SQos00zNNJq2FjD3Nscd+URqvbGcinUxnv+yEIo6mCjEFGylc1nDWRkP5Qhy9s=
+notifications:
+  slack:
+    secure: JzdsoRPzirozD5vkJpneYVi6Dx4JH72/LtwcNP7ckOrhYDsrE1E/hQvlBCIW84D8/uG4sZKnkB9JP4NocOa3f3INspbiawxFOSPsvIP8HFOdkvrYQdSW7kO0867EHxSfGgq1b34OwdHfLcvn1saPpj8NPv36Hg9y5KzclaeWWZM=
