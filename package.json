@@ -18,9 +18,7 @@
     "grunt-contrib-watch": "*"
   },
   "dependencies": {
-    "coffee-script": "^1.8",
     "es6-promise": "*",
-    "form-data": "*",
     "request": "*"
   },
   "keywords": [
