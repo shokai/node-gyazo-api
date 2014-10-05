@@ -1,0 +1,41 @@
+{
+  "name": "gyazo-api",
+  "version": "0.0.1",
+  "description": "API Client for Gyazo.com",
+  "main": "lib/gyazo-api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "coffee-errors": "*",
+    "mocha": "*",
+    "grunt": "*",
+    "grunt-cli": "*",
+    "grunt-simple-mocha": "*",
+    "grunt-notify": "*",
+    "grunt-contrib-coffee": "*",
+    "grunt-coffeelint": "*",
+    "grunt-contrib-watch": "*"
+  },
+  "dependencies": {
+    "coffee-script": "^1.8",
+    "es6-promise": "*",
+    "form-data": "*",
+    "request": "*"
+  },
+  "keywords": [
+    "gyazo",
+    "image",
+    "upload"
+  ],
+  "author": "Sho Hashimoto <hashimoto@shokai.org>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shokai/node-gyazo-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shokai/node-gyazo-api/issues"
+  },
+  "homepage": "https://github.com/shokai/node-gyazo-api"
+}
