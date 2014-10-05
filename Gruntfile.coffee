@@ -29,10 +29,11 @@ module.exports = (grunt) ->
         no_unnecessary_fat_arrows:
           level: 'ignore'
       dist:
-        files: [
-          { expand: yes, cwd: 'src/', src: [ '**/*.coffee' ] }
-          { expand: yes, cwd: 'tests/', src: [ '**/*.coffee' ] }
-        ]
+        files:
+          src: [
+            '**/*.coffee'
+            '!node_modules/**'
+          ]
 
     coffee:
       dist:
