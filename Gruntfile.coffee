@@ -12,7 +12,7 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'build',   [ 'coffeelint', 'coffee' ]
   grunt.registerTask 'test',    [ 'build', 'simplemocha' ]
-  grunt.registerTask 'default', [ 'build', 'watch' ]
+  grunt.registerTask 'default', [ 'test', 'watch' ]
 
   grunt.initConfig
 
@@ -58,4 +58,4 @@ module.exports = (grunt) ->
         interrupt: yes
       dist:
         files: [ 'src/**/*.coffee' ]
-        tasks: [ 'build' ]
+        tasks: [ 'test' ]
