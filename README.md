@@ -18,8 +18,22 @@ var client = new Gyazo('ACCESS_TOKEN');
 
 client.upload('/path/to/file.jpg')
 .then(function(res){
-  console.log(res);
-  console.log(res.permalink_url);
+  console.log(res.data);
+  console.log(res.data.permalink_url);
+})
+.catch(function(err){
+  console.error(err);
+});
+```
+
+### list
+
+```javascript
+client.list({page: 1, per_page: 50})
+.then(function(res){
+  console.log(res.data[0]);
+  console.log(res.response.headers['x-current-page']); // => 1
+  console.log(res.response.headers['x-per-page']);     // => 50
 })
 .catch(function(err){
   console.error(err);
