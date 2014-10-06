@@ -75,7 +75,7 @@ describe '"delete" method', ->
 
     image_id_uploaded = null
 
-    gyazo.upload "#{__dirname}/test.jpg"
+    gyazo.upload img_path
     .then (res) ->
       image_id_uploaded = res.data.image_id
       return res.data.image_id
