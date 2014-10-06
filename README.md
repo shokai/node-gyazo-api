@@ -18,7 +18,7 @@ var client = new Gyazo('ACCESS_TOKEN');
 
 client.upload('/path/to/file.jpg')
 .then(function(res){
-  console.log(res.data);
+  console.log(res.data.image_id);
   console.log(res.data.permalink_url);
 })
 .catch(function(err){
@@ -37,5 +37,14 @@ client.list({page: 1, per_page: 50})
 })
 .catch(function(err){
   console.error(err);
+});
+```
+
+### delete
+
+```javascript
+client.delete(image_id)
+.then(function(res){
+  console.log(res.data.image_id);
 });
 ```
