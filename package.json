@@ -1,5 +1,6 @@
 {
   "name": "gyazo-api",
+  "private": false,
   "version": "0.0.1",
   "description": "API Client for Gyazo.com",
   "main": "lib/gyazo-api.js",
