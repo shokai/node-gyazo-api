@@ -52,7 +52,7 @@ describe '"list" method', ->
     @timeout 3000
 
     gyazo.list
-      page: 2
+      page: 1
       per_page: 5
     .then (res) ->
       assert.equal typeof(res.response), 'object'
@@ -61,7 +61,7 @@ describe '"list" method', ->
       assert.equal typeof(res.data[0].image_id), 'string'
       assert.equal /^https?:\/\/.+/.test(res.data[0].permalink_url), true
       assert.equal /^https?:\/\/.+/.test(res.data[0].url), true
-      assert.equal res.response.headers['x-current-page'], 2
+      assert.equal res.response.headers['x-current-page'], 1
       assert.equal res.response.headers['x-per-page'], 5
 
 
