@@ -7,14 +7,22 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-coffeelint'
+  grunt.loadNpmTasks 'grunt-jsonlint'
   grunt.loadNpmTasks 'grunt-simple-mocha'
   grunt.loadNpmTasks 'grunt-notify'
 
-  grunt.registerTask 'build',   [ 'coffeelint', 'coffee' ]
+  grunt.registerTask 'build',   [ 'jsonlint', 'coffeelint', 'coffee' ]
   grunt.registerTask 'test',    [ 'build', 'simplemocha' ]
   grunt.registerTask 'default', [ 'test', 'watch' ]
 
   grunt.initConfig
+
+    jsonlint:
+      config:
+        src: [
+          '*.json'
+          '!node_modules/**'
+        ]
 
     coffeelint:
       options:
