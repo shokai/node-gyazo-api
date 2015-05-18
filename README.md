@@ -67,7 +67,7 @@ run test
 
 or
 
-    % grunt
+    % npm run watch
 
 
 Contributing

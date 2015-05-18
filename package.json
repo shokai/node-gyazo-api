@@ -5,7 +5,9 @@
   "description": "API Client for Gyazo.com",
   "main": "lib/gyazo-api.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "build": "grunt build",
+    "watch": "grunt"
   },
   "devDependencies": {
     "coffee-errors": "*",
