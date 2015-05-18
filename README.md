@@ -5,6 +5,8 @@ Gyazo-API
 - https://github.com/shokai/node-gyazo-api
 - https://www.npmjs.org/package/gyazo-api
 
+[![Build Status](https://travis-ci.org/shokai/node-gyazo-api.svg?branch=master)](https://travis-ci.org/shokai/node-gyazo-api)
+
 
 Usage
 -----
