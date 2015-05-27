@@ -18,7 +18,7 @@ module.exports = class Gyazo
           access_token: @access_token
       , (err, res, body) ->
         return reject err if err
-        return reject res if res.statusCode isnt 200
+        return reject res.body if res.statusCode isnt 200
         resolve
           response: res
           data:     JSON.parse body
@@ -33,7 +33,7 @@ module.exports = class Gyazo
         qs: query
       , (err, res, body) ->
         return reject err if err
-        return reject res if res.statusCode isnt 200
+        return reject res.body if res.statusCode isnt 200
         resolve
           response: res
           data:     JSON.parse res.body
@@ -47,7 +47,7 @@ module.exports = class Gyazo
           access_token: @access_token
       , (err, res, body) ->
         return reject err if err
-        return reject res if res.statusCode isnt 200
+        return reject res.body if res.statusCode isnt 200
         resolve
           response: res
           data:     JSON.parse res.body
