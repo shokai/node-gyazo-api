@@ -12,17 +12,17 @@ module.exports = class Gyazo
       if typeof image is 'string'
         image = fs.createReadStream image
       url = "https://upload.gyazo.com/api/upload"
-      request.post
+      req = request.post
         url: url
-        qs:
-          access_token: @access_token
       , (err, res, body) ->
         return reject err if err
         return reject res.body if res.statusCode isnt 200
         resolve
           response: res
           data:     JSON.parse body
-      .form().append "imagedata", image
+      form = req.form()
+      form.append "imagedata", image
+      form.append "access_token", @access_token
 
   list: (query = {}) =>
     new Promise (resolve, reject) =>
