@@ -7,11 +7,12 @@ var client = new Gyazo(process.env.GYAZO_TOKEN);
 
 var img_path = process.argv[2];
 
-client.upload(img_path)
-.then(function(res){
+client.upload(img_path, {
+  title: "test upload",
+  desc: "upload from node gyazo api"
+}).then(function(res){
   console.log(res.data);
   console.log(res.data.permalink_url);
-})
-.catch(function(err){
+}).catch(function(err){
   console.error(err);
 });

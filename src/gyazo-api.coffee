@@ -7,7 +7,7 @@ module.exports = class Gyazo
 
   constructor: (@access_token = null) ->
 
-  upload: (image) =>
+  upload: (image, params = {}) =>
     new Promise (resolve, reject) =>
       if typeof image is 'string'
         image = fs.createReadStream image
@@ -23,6 +23,8 @@ module.exports = class Gyazo
       form = req.form()
       form.append "imagedata", image
       form.append "access_token", @access_token
+      for k,v of params
+        form.append k, v
 
   list: (query = {}) =>
     new Promise (resolve, reject) =>

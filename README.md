@@ -19,7 +19,10 @@ Register new application and get [ACCESS TOKEN](https://gyazo.com/oauth/applicat
 var Gyazo  = require('gyazo-api');
 var client = new Gyazo('ACCESS_TOKEN');
 
-client.upload('/path/to/file.jpg')
+client.upload('/path/to/file.jpg', {
+  title: "my picture",
+  desc: "upload from nodejs"
+})
 .then(function(res){
   console.log(res.data.image_id);
   console.log(res.data.permalink_url);
