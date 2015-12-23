@@ -1,6 +1,7 @@
+sudo: false
 language: node_js
 node_js:
-- '0.12'
+- '5.2'
 env:
   secure: uPvqimQvvTqZCpN5xJL5Dc2suoF1BL9z7K4/EexQACW/8Vg4Vv4m9zYvZoBySlEj++vEzE9upLM4lVHjocdSsTro8jbUELlnEvouFQ5z78VU7SQos00zNNJq2FjD3Nscd+URqvbGcinUxnv+yEIo6mCjEFGylc1nDWRkP5Qhy9s=
 notifications:
