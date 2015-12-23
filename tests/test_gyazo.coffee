@@ -22,7 +22,7 @@ describe '"upload" method', ->
 
     @timeout 10000
 
-    gyazo.upload img_path
+    gyazo.upload(img_path)
     .then (res) ->
       new Promise (resolve, reject) ->
         assert.equal typeof(res.response), 'object'
@@ -35,7 +35,7 @@ describe '"upload" method', ->
 
     @timeout 10000
 
-    gyazo.upload fs.createReadStream img_path
+    gyazo.upload(fs.createReadStream img_path)
     .then (res) ->
       assert.equal typeof(res.response), 'object'
       assert.equal typeof(res.data.image_id), 'string'
@@ -75,11 +75,11 @@ describe '"delete" method', ->
 
     image_id_uploaded = null
 
-    gyazo.upload img_path
+    gyazo.upload(img_path)
     .then (res) ->
       image_id_uploaded = res.data.image_id
       return res.data.image_id
-    .then gyazo.delete
+    .then gyazo.delete()
     .then (res) ->
       assert.equal res.data.image_id, image_id_uploaded
 

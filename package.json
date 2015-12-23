@@ -10,15 +10,16 @@
     "watch": "grunt"
   },
   "devDependencies": {
-    "coffee-errors": "*",
-    "mocha": "*",
+    "coffee-script": "^1.10.0",
+    "coffeelint": "*",
     "grunt": "*",
     "grunt-cli": "*",
-    "grunt-simple-mocha": "*",
-    "grunt-notify": "*",
-    "grunt-contrib-coffee": "*",
     "grunt-coffeelint": "*",
-    "grunt-contrib-watch": "*"
+    "grunt-contrib-coffee": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-notify": "*",
+    "grunt-simple-mocha": "*",
+    "mocha": "*"
   },
   "dependencies": {
     "es6-promise": "*",

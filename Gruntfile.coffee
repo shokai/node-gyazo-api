@@ -2,8 +2,6 @@
 
 module.exports = (grunt) ->
 
-  require 'coffee-errors'
-
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-coffeelint'
