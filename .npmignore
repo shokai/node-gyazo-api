@@ -1,0 +1,5 @@
+src/
+samples/
+tests/
+Gruntfile.coffee
+circle.yml
