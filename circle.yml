@@ -1,6 +1,10 @@
 machine:
   node:
-    version: 5.2
+    version: 5.4
 notify:
   webhooks:
     - url: https://masuilab-hubot2.herokuapp.com/circleci-webhook?room=shookai
+test:
+  override:
+    - npm run build
+    - npm test

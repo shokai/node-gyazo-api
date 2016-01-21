@@ -1,5 +1,6 @@
 src/
 samples/
 tests/
-Gruntfile.coffee
 circle.yml
+.babelrc
+.eslintrc

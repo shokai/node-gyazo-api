@@ -5,23 +5,23 @@
   "description": "API Client for Gyazo.com",
   "main": "lib/gyazo-api.js",
   "scripts": {
-    "test": "grunt test",
-    "build": "grunt build",
-    "watch": "grunt"
+    "start": "node run.js",
+    "mocha": "mocha tests/test_*.es6 --compilers js:babel-register",
+    "eslint": "eslint *.es6 src/*.es6 tests/*.es6",
+    "test": "npm run eslint && npm run mocha",
+    "build": "babel src/ --out-dir lib/ --source-maps inline",
+    "watch": "parallelshell 'npm run build -- --watch' 'chokidar \"(src|test)/*.es6\" -c \"npm run eslint\"'"
   },
   "devDependencies": {
+    "babel-cli": "^6.4.5",
+    "babel-eslint": "^4.1.6",
+    "babel-preset-es2015": "^6.3.13",
     "chai": "^3.4.1",
-    "coffee-script": "^1.10.0",
-    "coffeelint": "*",
-    "grunt": "*",
-    "grunt-cli": "*",
-    "grunt-coffeelint": "*",
-    "grunt-contrib-coffee": "*",
-    "grunt-contrib-watch": "*",
-    "grunt-jsonlint": "*",
-    "grunt-notify": "*",
-    "grunt-simple-mocha": "*",
-    "mocha": "*"
+    "chokidar-cli": "^1.2.0",
+    "eslint": "^1.10.3",
+    "eslint-plugin-if-in-test": "^0.1.2",
+    "mocha": "^2.3.4",
+    "parallelshell": "^2.0.0"
   },
   "dependencies": {
     "request": "*"
