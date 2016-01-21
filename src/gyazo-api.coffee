@@ -1,7 +1,6 @@
 fs = require 'fs'
 
 request   = require 'request'
-{Promise} = require 'es6-promise'
 
 module.exports = class Gyazo
 

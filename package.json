@@ -23,7 +23,6 @@
     "mocha": "*"
   },
   "dependencies": {
-    "es6-promise": "*",
     "request": "*"
   },
   "keywords": [

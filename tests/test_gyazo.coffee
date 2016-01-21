@@ -3,7 +3,6 @@ path = require 'path'
 require path.resolve 'tests', 'test_helper'
 
 assert  = require 'assert'
-{Promise} = require 'es6-promise'
 
 Gyazo = require path.resolve()
 img_path = "#{__dirname}/test.jpg"
