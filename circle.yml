@@ -7,4 +7,5 @@ notify:
 test:
   override:
     - npm run build
-    - npm test
+    - npm run mocha
+    - npm run eslint
