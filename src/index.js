@@ -1,7 +1,7 @@
 import fs from 'fs'
 import request from 'request'
 
-module.exports = class Gyazo {
+export default class Gyazo {
 
   constructor (accessToken = null) {
     this.accessToken = accessToken

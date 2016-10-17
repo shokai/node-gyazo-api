@@ -1,6 +1,4 @@
-var path = require('path')
-var Gyazo = require(path.resolve()) // load this repos
-
+var Gyazo = require('../') // load this repos
 // var Gyazo = require('gyazo-api') // load from npm
 
 var client = new Gyazo(process.env.GYAZO_TOKEN)
