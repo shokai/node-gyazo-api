@@ -4,5 +4,5 @@ machine:
 test:
   override:
     - npm run build
-    - npm run mocha
-    - npm run eslint
+    - npm run test:mocha
+    - npm run test:eslint
