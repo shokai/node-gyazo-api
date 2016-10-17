@@ -1,7 +1,7 @@
 {
   "name": "gyazo-api",
   "private": false,
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "API Client for Gyazo.com",
   "main": "index.js",
   "scripts": {
