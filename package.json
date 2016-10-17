@@ -5,12 +5,14 @@
   "description": "API Client for Gyazo.com",
   "main": "lib/gyazo-api.js",
   "scripts": {
-    "start": "node run.js",
-    "mocha": "mocha tests/test_*.es6 --compilers js:babel-register",
-    "eslint": "eslint *.es6 src/*.es6 tests/*.es6",
-    "test": "npm run mocha && npm run eslint",
-    "build": "babel src/ --out-dir lib/ --source-maps inline",
-    "watch": "parallelshell 'npm run build -- --watch' 'chokidar \"(src|test)/*.es6\" -c \"npm run eslint\"'"
+    "test": "run-s test:*",
+    "test:mocha": "mocha tests/test_*.es6 --compilers js:babel-register",
+    "test:eslint": "eslint *.es6 src/*.es6 tests/*.es6",
+    "build": "run-s build:*",
+    "build:babel": "babel src/ --out-dir lib/ --source-maps inline",
+    "watch": "run-p watch:*",
+    "watch:babel": "npm run build:babel -- --watch",
+    "watch:eslint": "chokidar '(src|test)/*.es6' -c 'npm run test:eslint'"
   },
   "devDependencies": {
     "babel-cli": "^6.4.5",
