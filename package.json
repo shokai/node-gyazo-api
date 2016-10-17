@@ -11,7 +11,8 @@
     "build": "run-s build:*",
     "build:babel": "babel src/ --out-dir lib/ --source-maps inline",
     "watch": "run-p watch:*",
-    "watch:babel": "npm run build:babel -- --watch"
+    "watch:babel": "npm run build:babel -- --watch",
+    "clean": "rm -rf lib/"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",
