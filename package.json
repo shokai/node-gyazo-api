@@ -6,7 +6,7 @@
   "main": "lib/gyazo-api.js",
   "scripts": {
     "test": "run-s test:*",
-    "test:mocha": "mocha tests/test_*.js --compilers js:babel-register",
+    "test:mocha": "NODE_ENV=test mocha tests/test_*.js --compilers js:babel-register",
     "test:standard": "standard",
     "build": "run-s build:*",
     "build:babel": "babel src/ --out-dir lib/ --source-maps inline",
