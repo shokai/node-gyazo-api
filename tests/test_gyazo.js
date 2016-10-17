@@ -1,8 +1,9 @@
 /* eslint-env mocha */
+
 import './test_helper'
 import fs from 'fs'
 import {assert} from 'chai'
-import Gyazo from '../'
+import Gyazo from '../src/'
 
 const imgPath = `${__dirname}/test.jpg`
 

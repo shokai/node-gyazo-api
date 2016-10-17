@@ -3,7 +3,7 @@
   "private": false,
   "version": "0.3.0",
   "description": "API Client for Gyazo.com",
-  "main": "lib/gyazo-api.js",
+  "main": "index.js",
   "scripts": {
     "test": "run-s test:*",
     "test:mocha": "NODE_ENV=test mocha tests/test_*.js --compilers js:babel-register",
