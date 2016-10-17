@@ -5,4 +5,4 @@ test:
   override:
     - npm run build
     - npm run test:mocha
-    - npm run test:eslint
+    - npm run test:standard
