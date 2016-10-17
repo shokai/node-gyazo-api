@@ -9,6 +9,7 @@ export default class Gyazo {
 
   upload (image, params = {}) {
     return new Promise((resolve, reject) => {
+      if (!image) throw new Error('image is undefined')
       if (typeof image === 'string') image = fs.createReadStream(image)
       const url = 'https://upload.gyazo.com/api/upload'
       const req = request.post({
@@ -50,6 +51,7 @@ export default class Gyazo {
 
   delete (imageId) {
     return new Promise((resolve, reject) => {
+      if (!imageId) throw new Error('imageId is undefined')
       const url = `https://api.gyazo.com/api/images/${imageId}`
       request.del({
         url: url,
