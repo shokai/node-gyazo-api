@@ -1,71 +1,63 @@
-import fs from 'fs'
-import request from 'request'
+'use strict';
 
-export default class Gyazo {
+const fs = require(`fs`);
+const axios = require(`axios`);
+const FormData = require(`form-data`);
 
-  constructor (accessToken = null) {
-    this.accessToken = accessToken
-  }
+module.exports = class Gyazo{
+    constructor(access_token = null){
+        this.access_token = access_token;
+    }
 
-  upload (image, params = {}) {
-    return new Promise((resolve, reject) => {
-      if (!image) throw new Error('image is undefined')
-      if (typeof image === 'string') image = fs.createReadStream(image)
-      const url = 'https://upload.gyazo.com/api/upload'
-      const req = request.post({
-        url: url
-      }, (err, res, body) => {
-        if (err) return reject(err)
-        if (res.statusCode !== 200) return reject(res.body)
-        resolve({
-          response: res,
-          data: JSON.parse(body)
-        })
-      })
-      const form = req.form()
-      form.append('imagedata', image)
-      form.append('access_token', this.accessToken)
-      for (let k in params) {
-        form.append(k, params[k])
-      }
-    })
-  }
-
-  list (query = {}) {
-    return new Promise((resolve, reject) => {
-      query.access_token = this.accessToken
-      const url = 'https://api.gyazo.com/api/images'
-      request.get({
-        url: url,
-        qs: query
-      }, (err, res, body) => {
-        if (err) return reject(err)
-        if (res.statusCode !== 200) return reject(res.body)
-        resolve({
-          response: res,
-          data: JSON.parse(res.body)
-        })
-      })
-    })
-  }
-
-  delete (imageId) {
-    return new Promise((resolve, reject) => {
-      if (!imageId) throw new Error('imageId is undefined')
-      const url = `https://api.gyazo.com/api/images/${imageId}`
-      request.del({
-        url: url,
-        qs: {
-          access_token: this.accessToken
+    //uploadメソッド
+    async upload(image, params = {}){
+      try {
+        if(typeof image === "string") image = fs.createReadStream(image);
+        
+        const form = new FormData();
+        form.append('access_token', this.access_token);
+        form.append('imagedata', image)
+        for(let k in params){
+            form.append(k, params[k]);
         }
-      }, (err, res, body) => {
-        if (err) return reject(err)
-        if (res.statusCode !== 200) return reject(res.body)
-        resolve({
-          response: res,
-          data: JSON.parse(res.body)
+
+        const ENDPOINT = 'https://upload.gyazo.com/api/upload';
+        return await axios.post(ENDPOINT, form, {
+            headers: form.getHeaders()
         })
-      })
-    })
-  }
+
+      } catch (error) {
+          throw new Error(error);
+      }
+    }
+
+    //listメソッド
+    async list(query = {}){
+      try {
+        
+        query.access_token = this.access_token;
+        const ENDPOINT = 'https://api.gyazo.com/api/images';
+
+        return await axios.get(ENDPOINT, {params: query});
+        
+      } catch (error) {
+        throw new Error(error);
+      }
+    }
+
+    //deleteメソッド
+    async delete(image_id){
+      try {
+        const ENDPOINT = `https://api.gyazo.com/api/images/${image_id}`;
+
+        return await axios.delete(ENDPOINT, {
+          params: {
+            access_token: this.access_token
+          }
+        });
+        
+      } catch (error) {
+        throw new Error(error);
+      }
+    }
 }
