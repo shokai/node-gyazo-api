@@ -1,9 +1,11 @@
-var Gyazo = require('../') // load this repos
+'use strict';
+
+const Gyazo = require('../') // load this repos
 // var Gyazo = require('gyazo-api') // load from npm
 
-var client = new Gyazo(process.env.GYAZO_TOKEN)
+const client = new Gyazo(process.env.GYAZO_TOKEN);
 
-var imgPath = process.argv[2]
+const imgPath = process.argv[2] || `./samples/testPhoto.png`;
 
 client.upload(imgPath, {
   title: 'test upload',
